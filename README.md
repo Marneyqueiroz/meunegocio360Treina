@@ -165,6 +165,10 @@ A descrição de cada variável está comentada em [`.env.example`](./.env.examp
 
 Scripts de teste serão acrescentados na fase de testes (ver [Contribuições](#6-contribuições)).
 
+### Teste manual da autenticação (RF-BE-001)
+
+O roteiro com exemplos de requisições, cookies, respostas esperadas e cenários negativos está em [`docs/manual-rf-be-001-postman.md`](./docs/manual-rf-be-001-postman.md). No perfil `dev`, configure `JWT_SECRET`, `SEED_ADMIN_SENHA` e `SEED_USUARIO_SENHA` no `.env` antes de iniciar o Núcleo.
+
 ### Conceitos de DevOps (introdutórios)
 
 O foco do projeto é o desenvolvimento de software. Os conceitos de DevOps usados aqui são apenas introdutórios e já vêm prontos:
