@@ -21,6 +21,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
+import org.springframework.security.oauth2.jwt.JwsHeader;
+import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.slf4j.Logger;
@@ -132,7 +134,8 @@ public class AuthService {
     Instant accessExp = now.plus(Duration.ofMinutes(expiracaoMinutos));
     JwtClaimsSet claims = JwtClaimsSet.builder().issuer(issuer).subject(user.id().toString())
         .issuedAt(now).expiresAt(accessExp).id(UUID.randomUUID().toString()).claim("perfil", user.perfil().name()).build();
-    String access = jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+    var header = JwsHeader.with(MacAlgorithm.HS256).build();
+    String access = jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
     return new SessaoCriada(new SessaoResponse("Bearer", access, Duration.between(now, accessExp).toSeconds(), response(user)), raw, expira);
   }
   private UsuarioResponse response(Usuario user) { return new UsuarioResponse(user.id(), user.nome(), user.email(), user.perfil().name()); }
