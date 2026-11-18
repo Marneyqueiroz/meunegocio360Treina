@@ -151,6 +151,8 @@ npm run dev
 
 A descrição de cada variável está comentada em [`.env.example`](./.env.example) e em [`meunegocio360-js/.env.example`](./meunegocio360-js/.env.example). Com tudo no ar: backend em `http://localhost:8080` (Swagger UI em `/swagger-ui.html`) e frontend em `http://localhost:5173`. Endpoints e telas existem à medida que os requisitos são implementados.
 
+O fluxo de autenticação do frontend (RF-FE-001) está em [`meunegocio360-js`](./meunegocio360-js/README.md); inicie o backend antes de acessar `/login`.
+
 ### Comandos úteis
 
 | Onde | Comando | Para quê |

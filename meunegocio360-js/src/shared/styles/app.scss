@@ -1,0 +1,78 @@
+html {
+  min-width: 20rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-shell {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding-block: clamp(1.5rem, 6vh, 4rem);
+}
+
+.login-card {
+  box-shadow: var(--bs-box-shadow);
+}
+
+.login-card .card-body {
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.login-brand {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.home-main {
+  flex: 1;
+  padding-block: clamp(2rem, 6vw, 4rem);
+}
+
+.site-navbar .navbar-brand {
+  color: var(--bs-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-navbar .navbar-brand:focus-visible,
+.site-navbar .btn:focus-visible {
+  outline: 0.2rem solid var(--bs-dark);
+  outline-offset: 0.2rem;
+}
+
+::selection {
+  color: var(--bs-body-bg);
+  background: var(--bs-body-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

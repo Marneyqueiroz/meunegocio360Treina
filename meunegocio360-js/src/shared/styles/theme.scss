@@ -1,0 +1,53 @@
+@import "bootstrap/scss/functions";
+
+$primary: #ec4e26;
+$body-bg: #fcf5f0;
+$card-bg: #fcf5f0;
+$body-color: #1f1612;
+$body-secondary-color: #4a3f39;
+$border-color: #4a3f39;
+$card-border-color: #4a3f39;
+$table-border-color: #4a3f39;
+$footer: #cdbbae;
+$danger: #b02a37;
+$success: #146c43;
+$color-contrast-dark: #1f1612;
+$min-contrast-ratio: 4.5;
+$link-color: #1f1612;
+$link-decoration: underline;
+$focus-ring-color: rgba(#1f1612, 0.65);
+$focus-ring-width: 0.2rem;
+$font-size-base: 1rem;
+$font-family-sans-serif: "Barlow", system-ui, sans-serif;
+$headings-font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+$headings-font-weight: 600;
+$border-radius: 0.75rem;
+$card-border-radius: 0.875rem;
+$input-btn-padding-y: 0.625rem;
+$input-btn-padding-x: 1rem;
+$box-shadow: 0 0.75rem 2rem rgba(#1f1612, 0.08);
+
+@import "bootstrap/scss/variables";
+
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "footer": $footer,
+  )
+);
+
+@import "bootstrap/scss/bootstrap";
+
+$auth-logo-width: 14rem;
+
+.auth-brand-logo {
+  display: block;
+  width: $auth-logo-width;
+  max-width: 100%;
+  height: auto;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 29rem;
+}
